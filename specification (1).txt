@@ -1,0 +1,37 @@
+# Specification for Demographic Dataset Column Derivations
+
+## Column: AgeCategory
+
+Description: Categorizes subjects into age groups based on their calculated age.
+
+Logic/Algorithm:
+1. Calculate Age: Subtract 'Date of Birth' from 'Study Date' to get age in years. Assume dates are in YYYY-MM-DD format.
+2. Age Categories:
+  - If Age < 18, Category = "Child"
+  - If 18 <= Age < 55, Category = "Adult"
+  - If Age >= 55, Category = "Senior"
+
+Input Data:
+- Columns: 'Date of Birth', 'Study Date' (Assume columns exist in DM dataset)
+
+Example:
+- Date of Birth: 1995-03-15
+- Study Date: 2024-08-20
+- Age (Calculation): 2024 - 1995 = 29
+- AgeCategory (Result): "Adult"
+
+
+## Column: IsSmokerIndicator
+
+Description: Indicates if a subject is a smoker based on smoking status.
+
+Logic/Algorithm:
+- If 'Smoking Status' is "Current Smoker" or "Former Smoker", then IsSmokerIndicator = "Yes"
+- Otherwise, IsSmokerIndicator = "No"
+
+Input Data:
+- Column: 'Smoking Status' (Assume column exists in DM dataset)
+
+Example:
+- Smoking Status: "Current Smoker"
+- IsSmokerIndicator (Result): "Yes"

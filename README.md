@@ -1,1 +1,1 @@
-# stat-agents
+# Statistical Analyst as AI agents
